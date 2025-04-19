@@ -1,25 +1,6 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-        self.prev = None
+from node_dll import DoublyLinkedList
 
-class DoublyLinkedList:
-    def __init__(self):
-        self.head = None
-
-    def append(self, data):
-        new_node = Node(data)
-        if not self.head:
-            self.head = new_node
-            return
-        
-        curr = self.head
-        while curr.next:
-            curr = curr.next
-        curr.next = new_node
-        new_node.prev = curr
-
+class ExtendedDoublyLinkedList(DoublyLinkedList):
     def reverse(self):
         temp = None
         current = self.head
@@ -42,8 +23,9 @@ class DoublyLinkedList:
             print(curr.data, end=" <-> " if curr.next else "\n")
             curr = curr.next
 
+
 # Example usage:
-dll = DoublyLinkedList()
+dll = ExtendedDoublyLinkedList()
 for value in [1, 2, 3, 4, 5]:
     dll.append(value)
 
