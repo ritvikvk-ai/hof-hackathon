@@ -1,0 +1,2 @@
+This file conatins the guildelines for the project.
+Make a clean code.
